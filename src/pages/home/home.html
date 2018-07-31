@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-input [(ngModel)]="name" type="text" placeholder="fruit name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="colour" type="text" placeholder="fruit color"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="taste" type="text" placeholder="fruit taste"></ion-input>
+    </ion-item>
+    <ion-item  no-lines text-center>
+      <button (click)="addItem()" ion-button round color="primary">Submit</button>
+    </ion-item>
+
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let fruit of items" text-wrap>
+      {{fruit.name}} is {{fruit.colour}} color and taste is {{fruit.taste}}
+    </ion-item>
+  </ion-list>
+</ion-content>
